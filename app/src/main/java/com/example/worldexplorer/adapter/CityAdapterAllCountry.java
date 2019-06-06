@@ -95,6 +95,7 @@ public class CityAdapterAllCountry extends ArrayAdapter<city> {
                                 Intent intent= new Intent(context, MapsActivity.class);
                                 intent.putExtra("latitude",latitude);
                                 intent.putExtra("longitude",longitude);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 context.startActivity(intent);
 
 

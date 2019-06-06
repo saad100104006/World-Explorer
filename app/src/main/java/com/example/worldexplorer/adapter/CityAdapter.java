@@ -49,6 +49,7 @@ public class CityAdapter extends ArrayAdapter<city> {
                 Intent intent= new Intent(context, MapsActivity.class);
                 intent.putExtra("latitude",values.get(position).getLatitude());
                 intent.putExtra("longitude",values.get(position).getLongitude());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 
             }
