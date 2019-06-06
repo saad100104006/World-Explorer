@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="5dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Choose A Country below"
+        android:textStyle="bold"
+        />
+
+    <Spinner
+        android:id="@+id/country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/app_name"
+
+        ></Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingBottom="5dp"
+        android:text="Search Your City"
+        />
+
+    <EditText
+        android:id="@+id/searchEdt"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:hint="Search City Here"
+        android:background="@drawable/round"
+        android:padding="5dip"/>
+
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+
+        />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+
+
+
+
+
+</LinearLayout>
