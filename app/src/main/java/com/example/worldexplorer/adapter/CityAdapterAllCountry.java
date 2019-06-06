@@ -51,7 +51,9 @@ public class CityAdapterAllCountry extends ArrayAdapter<city> {
 
         LinearLayout items = (LinearLayout) rowView.findViewById(R.id.item);
 
-        countryName.setText("Country: "+values.get(position).getCountryName());
+        countryName.setVisibility(View.GONE);
+
+       // countryName.setText("Country: "+values.get(position).getCountryName());
         cityName.setText("City: "+values.get(position).getCityName());
         regionName.setText("Region: "+values.get(position).getRegionName());
 
