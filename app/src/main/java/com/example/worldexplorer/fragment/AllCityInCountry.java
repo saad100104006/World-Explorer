@@ -35,7 +35,6 @@ import java.util.List;
 
 import static com.example.worldexplorer.activity.MainActivity.countryList;
 import static com.example.worldexplorer.activity.MainActivity.countryNameList;
-import static com.example.worldexplorer.activity.MainActivity.getAllCountryInformation;
 import static com.example.worldexplorer.utils.Constants.BASE_URL;
 
 

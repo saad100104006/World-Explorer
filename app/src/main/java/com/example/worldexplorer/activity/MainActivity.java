@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getAllCountryInformation();
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.activity_main);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
@@ -118,63 +116,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static void getAllCountryInformation() {
-        RequestQueue requestQueue = Volley.newRequestQueue(MyApp.getAppContext());
-        final String url = BASE_URL + "geoinfo/countries";
 
-        // Initialize a new JsonArrayRequest instance
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
-                Request.Method.GET,
-                url,
-                null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        countryList.clear();
-                        countryNameList.clear();
-                        // Process the JSON
-                        try {
-                            // Loop through the array elements
-                            for (int i = 0; i < response.length(); i++) {
-                                // Get current json object
-                                JSONObject countryResonse = response.getJSONObject(i);
-
-                                // Get the current student (json object) data
-                                String countryCode = countryResonse.getString("country_code");
-                                String countryName = countryResonse.getString("country_name");
-                                String continentCode = countryResonse.getString("continent_code");
-                                String continentName = countryResonse.getString("continent_name");
-                                String currencyCode = countryResonse.getString("currency_code");
-                                String diallingCode = countryResonse.getString("dialling_code");
-
-                                country country = new country();
-                                country.setCountryCode(countryCode);
-                                country.setCountryName(countryName);
-                                country.setContinentCode(continentCode);
-                                country.setContinentName(continentName);
-                                country.setCurrencyCode(currencyCode);
-                                country.setDialingCode(diallingCode);
-
-                                countryList.add(country);
-                                countryNameList.add(countryName);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        setAdapter();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Do something when error occurred
-                        Log.e("error", String.valueOf(error));
-                    }
-                }
-        );
-        // Add JsonArrayRequest to the RequestQueue
-        requestQueue.add(jsonArrayRequest);
-
-    }
 
 }
